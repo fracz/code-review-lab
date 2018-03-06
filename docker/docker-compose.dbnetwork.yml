@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  mysql:
+    networks: [dbnetwork]
+
+networks:
+  dbnetwork:
+    external: true

@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  site:
+    networks: [proxy]
+    environment:
+      VIRTUAL_HOST: cr.fracz.pl
+      LETSENCRYPT_HOST: cr.fracz.pl
+      LETSENCRYPT_EMAIL: fraczwojciech@gmail.com
+    expose: [80]
+
+networks:
+  proxy:
+    external:
+      name: webproxy

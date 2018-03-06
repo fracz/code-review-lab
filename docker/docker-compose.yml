@@ -4,8 +4,6 @@ services:
   site:
     container_name: labcr-site
     restart: unless-stopped
-    ports:
-      - "8081:80"
     build: site
     volumes:
       - ../:/var/www:z
