@@ -1,0 +1,15 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+[remote "origin"]
+	url = http://student:sKaK4UFWhNhW9Di2GeNtcvDy4b3ndJA7BhJhF3M46Q@gerrit:8080/labcr
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[user]
+	email = student@student.agh.edu.pl
+	name = Student

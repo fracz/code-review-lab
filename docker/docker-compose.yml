@@ -36,8 +36,6 @@ services:
     container_name: labcr-gerrit
     restart: unless-stopped
     build: gerrit
-    ports:
-      - "80:80"
     depends_on:
       - mysql
     volumes:
