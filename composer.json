@@ -1,0 +1,14 @@
+{
+  "name": "Wojtek/mcr_gerrit",
+  "authors": [
+    {
+      "name": "fracz",
+      "email": "fraczwojciech@gmail.com"
+    }
+  ],
+  "require": {
+    "texthtml/php-lock": "dev-master",
+    "slim/slim": "2.4.3",
+    "zendframework/zend-db": "2.3.3"
+  }
+}

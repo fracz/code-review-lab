@@ -1,0 +1,8 @@
+vendor/
+lock.lock
+.idea/*
+!.idea/codeStyleSettings.xml
+composer.phar
+node_modules/
+bower_components/
+/results/

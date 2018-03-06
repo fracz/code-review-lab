@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# Rewrite API calls to api.php
+RewriteRule .* api.php [QSA,L]

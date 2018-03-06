@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  site:
+    container_name: labcr-site
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    build:
+      context: .
+    volumes:
+      - ../:/var/www:z
+      - ./apache-conf:/etc/apache2/sites-available:z
+    depends_on:
+     - gerrit
+    logging:
+      options:
+        max-size: 5m
+
+  mysql:
+    container_name: labcr-mysql
+    restart: unless-stopped
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ala123
+      MYSQL_DATABASE: reviewdb
+      MYSQL_USER: gerrit
+      MYSQL_PASSWORD: ala123
+    volumes:
+      - ../var/mysql:/var/lib/mysql:z
+    logging:
+      options:
+        max-size: 5m
+
+  gerrit:
+    container_name: labcr-gerrit
+    restart: unless-stopped
+    build: gerrit
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+    volumes:
+      - ../var/git:/var/gerrit/git
+      - ../var/db:/var/gerrit/db
+      - ../var/index:/var/gerrit/index
+      - ../var/cache:/var/gerrit/cache
+    ports:
+      - "29418:29418"
+      - "8080:8080"
+
+

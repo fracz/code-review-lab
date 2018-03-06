@@ -1,0 +1,52 @@
+{
+  "name": "PKC",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.1",
+    "angular": "1.3.9",
+    "angular-fontawesome": "0.1.2",
+    "angular-toaster": "git://github.com/kayhadrin/AngularJS-Toaster#3c462b2192934893a29cab77ba860a3e40338aff",
+    "bootstrap": "3.3.1",
+    "fontawesome": "4.2.0",
+    "angular-strap": "2.1.6",
+    "moment": "2.8.4",
+    "angular-i18n": "1.3.9",
+    "angular-bootstrap": "0.12.0"
+  },
+  "resolutions": {
+    "angular": "1.3.9"
+  },
+  "overrides": {
+    "jquery": {
+      "main": [
+        "dist/jquery.min.js"
+      ]
+    },
+    "angular": {
+      "main": [
+        "angular.min.js"
+      ]
+    },
+    "angular-fontawesome": {
+      "main": "dist/angular-fontawesome.min.js"
+    },
+    "angular-i18n": {
+      "main": "angular-locale_pl-pl.js"
+    },
+    "moment": {
+      "main": [
+        "min/moment.min.js",
+        "locale/pl.js"
+      ]
+    }
+  }
+}
