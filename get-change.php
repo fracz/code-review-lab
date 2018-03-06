@@ -36,6 +36,7 @@ if (!file_exists(REPO)) {
     $commands = [
         'cp -R ../labcr-template .git',
         'git init',
+        'chmod +x .git/hooks/commit-msg',
         'git remote add origin http://student:' . STUDENT_PASSWORD . '@gerrit:8080/labcr',
         'git fetch',
         'git reset --hard origin/master'
