@@ -22,6 +22,7 @@ docker-compose up --build -d
     ```
 1. Go to Preferences / HTTP password and generate one that does not contain
 `/` or `+` characters.
+1. In Preferences set unified diff.
 1. Put it in `get-change.php` constant.
 1. Adjust the rest of constants in this script.
 1. Run `php get-change.php` once to see if it works.

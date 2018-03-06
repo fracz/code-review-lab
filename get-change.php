@@ -1,6 +1,6 @@
 <?php
 define('REPO', __DIR__ . '/labcr');
-define('URL', 'http://apps.iisg.agh.edu.pl:12345');
+define('URL', 'http://localhost:8080');
 define('STUDENT_PASSWORD', 'cOrh8T2mOLHtlXpJhxfxtwNv83wsSJHTeoZOzMkFZw');
 
 require 'vendor/autoload.php';
