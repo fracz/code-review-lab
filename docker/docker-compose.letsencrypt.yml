@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  site:
+  labcr:
     networks: [proxy]
     environment:
       VIRTUAL_HOST: cr.fracz.pl

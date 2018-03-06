@@ -5,6 +5,7 @@ docker-compose up --build -d mysql
 # uncomment ENTRYPOINT line in docker/gerrit/Dockerfile
 docker-compose up gerrit
 # Ctrl+C when initialized
+# If there are permission problems, exit and chown gerrit's var dirs to 1000:1000, e.g. sudo chown -R 1000:1000 var/db var/cache var/git var/index
 # commend back the ENTRYPOINT line
 docker-compose up --build -d gerrit
 # wait until app starts
