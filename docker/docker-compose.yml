@@ -6,11 +6,10 @@ services:
     restart: unless-stopped
     ports:
       - "8081:80"
-    build:
-      context: .
+    build: site
     volumes:
       - ../:/var/www:z
-      - ./apache-conf:/etc/apache2/sites-available:z
+      - ./site/apache-conf:/etc/apache2/sites-available:z
     depends_on:
      - gerrit
     logging:
@@ -44,7 +43,4 @@ services:
       - ../var/index:/var/gerrit/index
       - ../var/cache:/var/gerrit/cache
     ports:
-      - "29418:29418"
       - "8080:8080"
-
-
