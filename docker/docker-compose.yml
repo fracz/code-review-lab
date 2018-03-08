@@ -3,6 +3,7 @@ version: '3'
 services:
   labcr:
     container_name: labcr-site
+    networks: [default]
     restart: unless-stopped
     build: site
     volumes:
@@ -14,27 +15,28 @@ services:
       options:
         max-size: 5m
 
-  mysql:
-    container_name: labcr-mysql
-    restart: unless-stopped
-    image: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: ala123
-      MYSQL_DATABASE: reviewdb
-      MYSQL_USER: gerrit
-      MYSQL_PASSWORD: ala123
-    volumes:
-      - ../var/mysql:/var/lib/mysql:z
-    logging:
-      options:
-        max-size: 5m
+#  mysql:
+#    container_name: labcr-mysql
+#    restart: unless-stopped
+#    image: mysql
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ala123
+#      MYSQL_DATABASE: reviewdb
+#      MYSQL_USER: gerrit
+#      MYSQL_PASSWORD: ala123
+#    volumes:
+#      - ../var/mysql:/var/lib/mysql:z
+#    logging:
+#      options:
+#        max-size: 5m
 
   gerrit:
     container_name: labcr-gerrit
+    networks: [default]
     restart: unless-stopped
     build: gerrit
-    depends_on:
-      - mysql
+#    depends_on:
+#      - mysql
     volumes:
       - ../var/git:/var/gerrit/git
       - ../var/db:/var/gerrit/db
