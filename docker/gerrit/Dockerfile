@@ -1,4 +1,4 @@
-FROM gerritcodereview/gerrit
+FROM gerritcodereview/gerrit:2.14.15
 
 COPY gerrit.config /var/gerrit/etc/gerrit.confg
 

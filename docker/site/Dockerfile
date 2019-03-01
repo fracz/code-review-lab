@@ -3,7 +3,8 @@ FROM php:7.1-apache
 WORKDIR /var/www
 
 RUN apt-get update \
-    && curl -sL https://deb.nodesource.com/setup_4.x | bash - \
+    && apt-get install -y gnupg \
+    && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     && apt-get install -y --no-install-recommends \
       libicu-dev \
       libpq-dev \
@@ -11,6 +12,7 @@ RUN apt-get update \
       ssl-cert \
       libcurl4-gnutls-dev \
       git \
+      zlib1g-dev \
       unzip \
       nodejs \
     && update-ca-certificates \
